@@ -1,0 +1,8 @@
+{
+  "name": "bebe-con-memes",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
