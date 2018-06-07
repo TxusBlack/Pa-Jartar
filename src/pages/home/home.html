@@ -1,14 +1,52 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
-      Ionic Blank
+      Bebe con Memes
     </ion-title>
   </ion-navbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="tabs" color="primary">
+      <ion-segment-button value="server">
+        Servidor
+      </ion-segment-button>
+      <ion-segment-button value="client">
+        Cliente
+      </ion-segment-button>
+      <ion-segment-button value="juego">
+        Juego
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <div [ngSwitch]="tabs">
+    <ion-list *ngSwitchCase="'server'">
+      <h1>Bienvenido a Bebe con Memes!</h1>
+      <p>Para iniciar como servidor se debe crear un hotspot personalizado</p>
+      <p color="danger" [hidden]="!alertMessage">{{alertMessage}}</p>
+      <button ion-button (click)="createHotspot()">Crear Hotspot personalizado</button>
+      <br>
+      <button ion-button (click)="onHotspot()">Levantar Hotspot</button>
+      <p [hidden]="hotspotStatus !== true">Okay! Ya eres servidor, dile a tus amigos que se unan presionando el botón de conectar en la pestaña cliente</p>
+      <button ion-button [hidden]="hotspotStatus !== true" (click)="closeHotspot()">Apagar Hotspot</button>
+      <h1>Levantar servicio</h1>
+      <button ion-button (click)="startService()">Iniciar</button>
+      <p>{{url}}</p>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'client'">
+      <h1>Conectarse automáticamente a un servidor del juego</h1>
+      <button ion-button (click)="connect()">Conectar</button>
+      <p>{{statusWifi}}</p>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'juego'">
+      <h1>¿Quieres iniciar el juego?</h1>
+      <button ion-button (click)="pushToGame()">Entrar al juego</button>
+    </ion-list>
+  </div>
+
+  <!--<button ion-button (click)="wifi()">Escanear Wifi</button>
+  <p *ngFor="let net of networks">{{ net.SSID }}</p>-->
 </ion-content>

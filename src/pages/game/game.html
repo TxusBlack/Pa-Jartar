@@ -1,0 +1,10 @@
+<ion-content padding>
+  <img [src]="imagen" alt="meme" style="padding-top: 80px;">
+  <img [src]="imagen" alt="meme" style="padding-top: 80px;">
+</ion-content>
+<ion-footer no-shadow>
+  <ion-toolbar position="bottom">
+    <button *ngIf="tirar == true" (click)="dados()" ion-button block text-center>Tirar dados</button>
+    <button ion-button block *ngIf="tirar == false" (click)="reto()">Ver reto</button>
+  </ion-toolbar>
+</ion-footer>

@@ -5,13 +5,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { LoginPage, HomePage } from '../pages/index.page';
+import { LoginPage, HomePage, GamePage } from '../pages/index.page';
+import { Hotspot } from '@ionic-native/hotspot';
+import { Httpd } from '@ionic-native/httpd';
 
 @NgModule({
   declarations: [
     MyApp,
     LoginPage,
-    HomePage
+    HomePage,
+    GamePage
   ],
   imports: [
     BrowserModule,
@@ -21,11 +24,14 @@ import { LoginPage, HomePage } from '../pages/index.page';
   entryComponents: [
     LoginPage,
     MyApp,
-    HomePage
+    HomePage,
+    GamePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Hotspot,
+    Httpd,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
