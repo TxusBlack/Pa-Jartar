@@ -2,7 +2,7 @@
 <widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Pa' Jartar</name>
     <description>Una aplicación desarrollada pa' jartar</description>
-    <author email="dmoreno@starklab.co" href="http://starklab.co/">Diego Moreno</author>
+    <author email="iam@diegomoreno.co" href="http://www.diegomoreno.co/">Diego Moreno</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
